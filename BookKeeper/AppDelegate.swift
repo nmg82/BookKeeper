@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  private let managedObjectContext = createBookKeeperMainContext()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    guard let navigationController = window?.rootViewController,
+      rootVC = navigationController.childViewControllers.first as? ManagedObjectContextSettable
+      else { fatalError("wrong view controller type") }
+    
+    rootVC.managedObjectContext = managedObjectContext
+    
     return true
   }
 
