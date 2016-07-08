@@ -6,6 +6,8 @@ public class ManagedObject: NSManagedObject {
 public protocol ManagedObjectType: class {
   static var entityName: String { get }
   static var defaultSortDescriptors: [NSSortDescriptor] { get }
+  static var defaultPredicate: NSPredicate { get }
+  var managedObjectContext: NSManagedObjectContext? { get }
 }
 
 extension ManagedObjectType {

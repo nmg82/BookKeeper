@@ -25,4 +25,8 @@ extension Book: ManagedObjectType {
   public static var defaultSortDescriptors: [NSSortDescriptor] {
     return [NSSortDescriptor(key: "author", ascending: true)]
   }
+  
+  public static var defaultPredicate: NSPredicate {
+    return NSPredicate(value: true)
+  }
 }

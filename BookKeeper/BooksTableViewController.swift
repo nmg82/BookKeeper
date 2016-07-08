@@ -1,7 +1,11 @@
 import UIKit
 import CoreData
 
-class BooksTableViewController: UITableViewController, ManagedObjectContextSettable {
+class BooksTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType {
+  
+  enum SegueIdentifier: String {
+    case ShowBookDetail = "showBookDetail"
+  }
   
   var managedObjectContext: NSManagedObjectContext!
   
@@ -33,18 +37,21 @@ class BooksTableViewController: UITableViewController, ManagedObjectContextSetta
   
 }
 
+//MARK: - DataProviderDelegate
 extension BooksTableViewController: DataProviderDelegate {
   func dataProviderDidUpdate(updates: [DataProviderUpdate<Book>]?) {
     dataSource.processUpdates(updates)
   }
 }
 
+//MARK: - DataSourceDelegate
 extension BooksTableViewController: DataSourceDelegate {
   func cellIdentifierForObject(book: Book) -> String {
     return "bookCell"
   }
 }
 
+//MARK: - Add Book
 extension BooksTableViewController {
   func getAddBookAlertController() -> UIAlertController {
     let ac = UIAlertController(title: "Add Book", message: "Enter Book Info Below", preferredStyle: .Alert)
@@ -77,5 +84,17 @@ extension BooksTableViewController {
     }))
     
     return ac
+  }
+}
+
+// MARK: - Segues
+extension BooksTableViewController {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    switch segueIdentifierForSegue(segue) {
+    case .ShowBookDetail:
+      guard let vc = segue.destinationViewController as? BookDetailViewController,
+        book = dataSource.selectedObject else { fatalError("unable to setup book detail") }
+      vc.book = book
+    }
   }
 }
