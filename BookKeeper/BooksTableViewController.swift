@@ -79,7 +79,13 @@ extension BooksTableViewController {
         year = ac.textFields?[2].text,
         subject = ac.textFields?[3].text else { return }
       managedObjectContext.performChanges {
-        Book.insertIntoContext(managedObjectContext, title: title, author: author, subject: subject, year: year)
+        Book.insertIntoContext(managedObjectContext,
+          title: title,
+          author: author,
+          subject: subject,
+          year: year,
+          location: nil,
+          placemark: nil)
       }
     }))
     

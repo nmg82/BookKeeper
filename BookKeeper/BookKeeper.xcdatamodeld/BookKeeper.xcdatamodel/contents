@@ -5,8 +5,23 @@
         <attribute name="subject" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="year" attributeType="String" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="books" inverseEntity="Country" syncable="YES"/>
+    </entity>
+    <entity name="Continent" representedClassName="Continent" parentEntity="GeographicRegion" syncable="YES">
+        <relationship name="countries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Country" inverseName="continent" inverseEntity="Country" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" parentEntity="GeographicRegion" syncable="YES">
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="country" inverseEntity="Book" syncable="YES"/>
+        <relationship name="continent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Continent" inverseName="countries" inverseEntity="Continent" syncable="YES"/>
+    </entity>
+    <entity name="GeographicRegion" isAbstract="YES" syncable="YES">
+        <attribute name="numericISO3166Code" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Continent" positionX="-36" positionY="36" width="128" height="60"/>
+        <element name="Country" positionX="-54" positionY="27" width="128" height="75"/>
+        <element name="GeographicRegion" positionX="-63" positionY="9" width="128" height="75"/>
     </elements>
 </model>

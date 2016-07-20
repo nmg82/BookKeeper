@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4077551D3034B700D702FC /* ISO3166.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4077541D3034B700D702FC /* ISO3166.swift */; };
+		1E4077571D30355C00D702FC /* LocalizedStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4077561D30355C00D702FC /* LocalizedStringConvertible.swift */; };
+		1E4077591D3035AF00D702FC /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4077581D3035AF00D702FC /* Country.swift */; };
+		1E40775B1D3035B700D702FC /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40775A1D3035B700D702FC /* Continent.swift */; };
+		1E40775D1D3037E600D702FC /* UpdateTimestampable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40775C1D3037E600D702FC /* UpdateTimestampable.swift */; };
 		1E8807891D2EEF2B00173F62 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8807881D2EEF2B00173F62 /* SegueHandlerType.swift */; };
 		1E88078B1D2EF55E00173F62 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88078A1D2EF55E00173F62 /* BookDetailViewController.swift */; };
 		1E88078D1D2EFC5800173F62 /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88078C1D2EFC5800173F62 /* ManagedObjectObserver.swift */; };
@@ -31,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E4077541D3034B700D702FC /* ISO3166.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO3166.swift; sourceTree = "<group>"; };
+		1E4077561D30355C00D702FC /* LocalizedStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStringConvertible.swift; sourceTree = "<group>"; };
+		1E4077581D3035AF00D702FC /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		1E40775A1D3035B700D702FC /* Continent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
+		1E40775C1D3037E600D702FC /* UpdateTimestampable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTimestampable.swift; sourceTree = "<group>"; };
 		1E8807881D2EEF2B00173F62 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		1E88078A1D2EF55E00173F62 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		1E88078C1D2EFC5800173F62 /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				1ED1CB711D2D6BF500A969A8 /* SwiftExtensions.swift */,
+				1E4077541D3034B700D702FC /* ISO3166.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -144,6 +155,8 @@
 				1ED1CB741D2D6C5100A969A8 /* ManagedObjectContextSettable.swift */,
 				1ED1CB761D2D6C8A00A969A8 /* ConfigurableCell.swift */,
 				1E8807881D2EEF2B00173F62 /* SegueHandlerType.swift */,
+				1E4077561D30355C00D702FC /* LocalizedStringConvertible.swift */,
+				1E40775C1D3037E600D702FC /* UpdateTimestampable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -153,6 +166,8 @@
 			children = (
 				1ED1CB6E1D2D6B1B00A969A8 /* BookKeeper.xcdatamodeld */,
 				1ED1CB781D2D6CC000A969A8 /* Book.swift */,
+				1E4077581D3035AF00D702FC /* Country.swift */,
+				1E40775A1D3035B700D702FC /* Continent.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,11 +264,16 @@
 				1ED1CB891D2D82D900A969A8 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				1ED1CB511D2D5B2800A969A8 /* AppDelegate.swift in Sources */,
 				1ED1CB791D2D6CC000A969A8 /* Book.swift in Sources */,
+				1E4077551D3034B700D702FC /* ISO3166.swift in Sources */,
 				1ED1CB701D2D6B1B00A969A8 /* BookKeeper.xcdatamodeld in Sources */,
 				1E8807891D2EEF2B00173F62 /* SegueHandlerType.swift in Sources */,
+				1E40775B1D3035B700D702FC /* Continent.swift in Sources */,
+				1E40775D1D3037E600D702FC /* UpdateTimestampable.swift in Sources */,
 				1ED1CB751D2D6C5100A969A8 /* ManagedObjectContextSettable.swift in Sources */,
+				1E4077571D30355C00D702FC /* LocalizedStringConvertible.swift in Sources */,
 				1ED1CB721D2D6BF500A969A8 /* SwiftExtensions.swift in Sources */,
 				1E88078D1D2EFC5800173F62 /* ManagedObjectObserver.swift in Sources */,
+				1E4077591D3035AF00D702FC /* Country.swift in Sources */,
 				1ED1CB7E1D2D6FB700A969A8 /* BookKeeperStack.swift in Sources */,
 				1ED1CB851D2D783A00A969A8 /* TableViewDataSource.swift in Sources */,
 				1ED1CB831D2D77CC00A969A8 /* DataProvider.swift in Sources */,

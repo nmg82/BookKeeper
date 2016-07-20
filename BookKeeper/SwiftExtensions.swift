@@ -7,7 +7,16 @@ extension NSURL {
 }
 
 extension SequenceType where Generator.Element: AnyObject {
-  public func containsObjectIdenticalTo(object: AnyObject) -> Bool {
+  func containsObjectIdenticalTo(object: AnyObject) -> Bool {
     return contains { $0 === object }
+  }
+}
+
+extension SequenceType {
+  func findFirstOccurence(@noescape block: Generator.Element -> Bool) -> Generator.Element? {
+    for x in self where block(x) {
+      return x
+    }
+    return nil
   }
 }
